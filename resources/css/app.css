@@ -1,0 +1,40 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #343a40;
+}
+
+.navbar-brand {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  color: #ffffff;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.btn {
+  color: #ffffff;
+}
+
+.visitor-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.alert {
+  margin-bottom: 20px;
+}
