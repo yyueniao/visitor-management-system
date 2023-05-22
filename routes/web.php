@@ -9,4 +9,4 @@ Route::get('/', function () {
 Route::get('/visitor/create', [VisitorController::class, 'create'])->name('visitor.create');
 Route::get('/visitor/list', [VisitorController::class, 'list'])->name('visitor.list');
 Route::post('/visitor', [VisitorController::class, 'store'])->name('visitor.store');
-Route::delete('/visitor/{visitor}', [VisitorController::class, 'store'])->name('visitor.destroy');
+Route::delete('/visitor/{visitor}', [VisitorController::class, 'destroy'])->name('visitor.destroy');

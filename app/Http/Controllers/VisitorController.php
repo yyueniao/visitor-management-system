@@ -53,4 +53,18 @@ class VisitorController extends Controller
 
         return redirect()->route('visitor.create')->with('success', 'Visitor registered successfully!');
     }
+
+    /**
+     * Remove the specified visitor from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Visitor  $visitor
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy(Request $request, Visitor $visitor)
+    {
+        $visitor->delete();
+
+        return redirect()->route('visitor.list')->with('success', 'Visitor removed successfully!');
+    }
 }
