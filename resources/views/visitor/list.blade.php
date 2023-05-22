@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container col-lg-8 col-md-10 col-sm-12">
         <h1>Visitors</h1>
 
         @if(session('success'))
