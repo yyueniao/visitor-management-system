@@ -49,22 +49,25 @@ class VisitorController extends Controller
             'phone' => $request->phone,
             'vehicle' => $request->vehicle ?? null,
             'purpose' => $request->purpose,
+            'checkin_status' => true,
         ]);
 
         return redirect()->route('visitor.create')->with('success', 'Visitor registered successfully!');
     }
 
     /**
-     * Remove the specified visitor from storage.
+     * Update the check-in status of a visitor to false (checkout).
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Visitor  $visitor
+     * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Request $request, Visitor $visitor)
+    public function checkout(Request $request, $id)
     {
-        $visitor->delete();
+        $visitor = Visitor::findOrFail($id);
 
-        return redirect()->route('visitor.list')->with('success', 'Visitor removed successfully!');
+        $visitor->checkin_status = false;
+        $visitor->save();
+
+        return redirect()->route('visitor.list')->with('success', 'Visitor check out successfully!');
     }
 }

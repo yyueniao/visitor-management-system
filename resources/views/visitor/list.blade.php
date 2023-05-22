@@ -17,6 +17,7 @@
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Purpose</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -27,11 +28,12 @@
                         <td>{{ $visitor->email }}</td>
                         <td>{{ $visitor->phone }}</td>
                         <td>{{ $visitor->purpose }}</td>
+                        <td>{{ $visitor->checkin_status ? "Checked in" : "Checked out" }}</td>
                         <td>
-                            <form action="{{ route('visitor.destroy', $visitor) }}" method="POST">
+                            <form action="{{ route('visitor.checkout', $visitor->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                <button type="submit" class="btn btn-danger btn-sm" {{ $visitor->checkin_status ? '' : 'disabled' }}>Check Out</button>
                             </form>
                         </td>
                     </tr>

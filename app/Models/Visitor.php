@@ -20,5 +20,6 @@ class Visitor extends Model
         'phone',
         'vehicle',
         'purpose',
+        'checkin_status'
     ];
 }
