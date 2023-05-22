@@ -21,6 +21,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('visitor.create') }}">Register</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('visitor.list') }}">Visitors</a>
+                    </li>
                 </ul>
             </div>
         </div>

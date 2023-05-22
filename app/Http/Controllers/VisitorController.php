@@ -18,6 +18,17 @@ class VisitorController extends Controller
     }
 
     /**
+     * Display the visitors list.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function list()
+    {
+        $visitors = Visitor::all();
+        return view('visitor.list', compact('visitors'));
+    }
+
+    /**
      * Store a newly created visitor in the database.
      *
      * @param  \Illuminate\Http\Request  $request
